@@ -31,11 +31,14 @@ namespace RestSharpNetCoreTemplate.Bases
         {
             //Dicionário de headeres deve ser iniciado com os headers comuns a todos os métodos da API
             {"Content-Type", "application/json"},
+            {"Authorization", JsonBuilder.ReturnParameterAppSettings("TOKEN")},
         };
                
         protected IDictionary<string, string> cookies = new Dictionary<string, string>()
         {
             //Dicionário de cookies deve ser iniciado com os headers comuns à todas os métodos da API
+
+       
         };
 
         protected IDictionary<string, string> parameters = new Dictionary<string, string>();

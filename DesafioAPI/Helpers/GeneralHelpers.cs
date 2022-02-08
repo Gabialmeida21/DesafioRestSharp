@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -129,6 +130,18 @@ namespace RestSharpNetCoreTemplate.Helpers
             else
             {
                 return false;
+            }
+        }
+        public static IEnumerable ReturnCSVData(string csvPath)
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            using StreamReader sr = new StreamReader(csvPath, Encoding.GetEncoding(1252));
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                ArrayList result = new ArrayList();
+                result.AddRange(line.Split(';'));
+                yield return result;
             }
         }
     }

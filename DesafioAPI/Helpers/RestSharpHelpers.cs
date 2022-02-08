@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using RestSharp.Authenticators;
+using RestSharpNetCoreTemplate.Tests;
 using System;
 using System.Collections.Generic;
 using System.IO;

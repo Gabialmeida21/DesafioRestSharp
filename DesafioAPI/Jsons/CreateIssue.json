@@ -1,0 +1,10 @@
+﻿{
+  "summary": "$summary",
+  "description": "$testeissue",
+  "category": {
+    "name": "$name"
+  },
+  "project": {
+    "name": "_new2"
+  }
+}
