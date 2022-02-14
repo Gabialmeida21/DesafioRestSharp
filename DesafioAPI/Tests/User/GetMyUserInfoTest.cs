@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using DesafioAPI.Requests.User;
 using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
@@ -7,24 +7,22 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RestSharpNetCoreTemplate.Tests
+namespace DesafioAPI.Tests.User
 {
     [TestFixture]
-    public class FindProjectTests : TestBase
+    public class GetMyUserInfoTest : TestBase
     {
         [Test]
-        public void ConsultarProjetoSucesso()
+        public void ConsultaInformacaoUsuario()
         {
             //arrange
 
             //actions
-            FindProjectRequest findProjectRequest = new FindProjectRequest();
-            IRestResponse<dynamic> response = findProjectRequest.ExecuteRequest();
+            GetMyUserInfoRequest getMyInfoRequest = new GetMyUserInfoRequest();
+            IRestResponse<dynamic> response = getMyInfoRequest.ExecuteRequest();
 
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
             //Assert.AreEqual("1", response.Data["id"].ToString());
-            JObject obs = JObject.Parse(response.Content);
-            Console.WriteLine(obs);
 
 
         }
