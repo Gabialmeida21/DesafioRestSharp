@@ -7,9 +7,9 @@ using System.Text;
 
 namespace RestSharpNetCoreTemplate.Requests
 {
-    public class CreateProjectRequest : RequestBase
+    public class CreateIssueRequest : RequestBase
     {
-        public CreateProjectRequest()
+        public CreateIssueRequest()
         {
             method = RestSharp.Method.POST;
             requestService = "/api/rest/issues/";
