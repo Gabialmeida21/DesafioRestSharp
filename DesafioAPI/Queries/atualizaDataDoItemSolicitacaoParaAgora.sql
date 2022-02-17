@@ -1,3 +1,1 @@
- update Solicitacao.SolicitacaoItem  
-    set DataRealizacao = GETDATE() 
-  where Id = '$solicitacaoItemId'
+select * from mantis_project_table

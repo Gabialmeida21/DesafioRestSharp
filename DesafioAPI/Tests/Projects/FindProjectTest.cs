@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
+using RestSharpNetCoreTemplate.DBSteps;
 using RestSharpNetCoreTemplate.Requests;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,15 @@ namespace RestSharpNetCoreTemplate.Tests
             JObject obs = JObject.Parse(response.Content);
             Console.WriteLine(obs);
 
+
+        }
+
+        [Test]
+
+        public void retornaDados() 
+        {
+            Console.WriteLine(SolicitacaoDBSteps.Select()[1]);
+            Console.WriteLine(SolicitacaoDBSteps.Select()[2]);
 
         }
     }
