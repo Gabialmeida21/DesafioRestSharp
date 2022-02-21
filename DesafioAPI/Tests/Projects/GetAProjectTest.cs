@@ -3,28 +3,26 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
+using RestSharpNetCoreTemplate.Requests;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace DesafioAPI.Tests.Projects
 {
-    [TestFixture]
-    public class UpdateAProjectTest : TestBase
+    public class GetAProjectTest : TestBase
     {
         [Test]
-        public void AlterarProjetoSucesso()
+        public void ConsultarUmProjetoSucesso()
         {
             //arrange
-            string name = "$nameProject6";
 
             //actions
-            int project_id = 6;
+            int project_id = 2;
 
-            UpdateAProjectRequest updateAProjectRequest = new UpdateAProjectRequest(project_id);
-            updateAProjectRequest.SetJsonBody(name);
+            GetAProjectRequest getAProjectRequest = new GetAProjectRequest(project_id.ToString());
+            IRestResponse<dynamic> response = getAProjectRequest.ExecuteRequest();
 
-            IRestResponse<dynamic> response = updateAProjectRequest.ExecuteRequest();
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
             //Assert.AreEqual("1", response.Data["id"].ToString());
             JObject obs = JObject.Parse(response.Content);
@@ -34,4 +32,3 @@ namespace DesafioAPI.Tests.Projects
         }
     }
 }
-

@@ -10,7 +10,7 @@ namespace DesafioAPI.Requests.Projects
     public class UpdateAProjectRequest : RequestBase
     {
 
-        public UpdateAProjectRequest(string project_id)
+        public UpdateAProjectRequest(int project_id)
         {
             method = RestSharp.Method.PATCH;
             requestService = "/api/rest/projects/{project_id}";
@@ -20,7 +20,7 @@ namespace DesafioAPI.Requests.Projects
 
         public void SetJsonBody(string name)
         {
-            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/UpdateAProject.json", Encoding.UTF8);
+            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/AddSubProject.json", Encoding.UTF8);
             jsonBody = jsonBody.Replace("$nameproject6", name);
 
 
