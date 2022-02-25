@@ -15,6 +15,13 @@ namespace RestSharpNetCoreTemplate.DBSteps
             string query = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/atualizaDataDoItemSolicitacaoParaAgora.sql", Encoding.UTF8);
             return DBHelpers.RetornaDadosQuery(query);
         }
+
+        public static List<string> SelectMonitorAnIssue()
+        {
+            string query = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/monitorAnIssue.sql", Encoding.UTF8);
+            return DBHelpers.RetornaDadosQuery(query);
+        }
+
         public static void AtualizaDataDoItemSolicitacaoParaAgoraDB(string solicitacaoItemId)
         {
             string query = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/atualizaDataDoItemSolicitacaoParaAgora.sql", Encoding.UTF8);
@@ -24,5 +31,7 @@ namespace RestSharpNetCoreTemplate.DBSteps
 
             ExtentReportHelpers.AddTestInfo(2, "PARAMETERS: solicitacaoItemId = " + solicitacaoItemId);
         }
+
+
     }
 }

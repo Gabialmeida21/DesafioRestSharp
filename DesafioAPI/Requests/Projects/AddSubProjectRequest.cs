@@ -12,15 +12,15 @@ namespace DesafioAPI.Requests.Projects
         public AddSubProjectRequest(int project_id)
         {
             method = RestSharp.Method.POST;
-            requestService = "/api/rest/projects/:project_id/subprojects";
+            requestService = "/api/rest/projects/{project_id}/subprojects";
 
-            parameters.Add("project_id", project_id);
+            parameters.Add("project_id", project_id.ToString());
         }
 
         public void SetJsonBody(string name)
         {
             jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/Projects/AddSubProject.json", Encoding.UTF8);
-            jsonBody = jsonBody.Replace("SubProject2", name);
+            jsonBody = jsonBody.Replace("projetotesteaddSUB3", name);
 
 
         }

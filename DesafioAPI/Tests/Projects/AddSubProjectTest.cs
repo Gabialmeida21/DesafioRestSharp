@@ -15,9 +15,9 @@ namespace DesafioAPI.Tests.Projects
         public void AdicionarSubProjetoSucesso()
         {
             //arrange
-            string name = "SubProject2";
+            string name = "projetotesteaddSUB3";
 
-            int project_id = 4;
+            int project_id = 9;
 
             //actions
             AddSubProjectRequest addSubProjectRequest = new AddSubProjectRequest(project_id);
@@ -25,11 +25,13 @@ namespace DesafioAPI.Tests.Projects
 
 
             IRestResponse<dynamic> response = addSubProjectRequest.ExecuteRequest();
-            JObject obs = JObject.Parse(response.Content);
-            Console.WriteLine(obs);
-            Assert.AreEqual(System.Net.HttpStatusCode.Created, response.StatusCode);
+
+            //JObject obs = JObject.Parse(response.Content);
+            Console.WriteLine(response.Content);
+
+            Assert.AreEqual(System.Net.HttpStatusCode.NoContent, response.StatusCode);
             //Assert.AreEqual("1", response.Data["id"].ToString());
-            
+
 
 
 
