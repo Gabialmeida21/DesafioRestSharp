@@ -1,12 +1,8 @@
-﻿using DesafioAPI.Requests.Projects;
-using Newtonsoft.Json.Linq;
+﻿using DesafioAPI.Helpers;
+using DesafioAPI.Requests.Projects;
 using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
-using RestSharpNetCoreTemplate.Requests;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DesafioAPI.Tests.Projects
 {
@@ -25,9 +21,7 @@ namespace DesafioAPI.Tests.Projects
 
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
             //Assert.AreEqual("1", response.Data["id"].ToString());
-            JObject obs = JObject.Parse(response.Content);
-            Console.WriteLine(obs);
-
+            response.PrintResponse();
 
         }
     }

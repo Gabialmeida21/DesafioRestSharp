@@ -1,4 +1,5 @@
-﻿using DesafioAPI.Requests.User;
+﻿using DesafioAPI.Helpers;
+using DesafioAPI.Requests.User;
 using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
@@ -22,6 +23,8 @@ namespace DesafioAPI.Tests.User
             {
                 Assert.AreEqual(System.Net.HttpStatusCode.NoContent, response.StatusCode);
             }
+
+            response.PrintResponse();
         }
     }
 }
