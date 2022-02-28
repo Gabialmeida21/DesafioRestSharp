@@ -20,7 +20,7 @@ namespace DesafioAPI.Requests.Projects
         public void SetJsonBody(string name)
         {
             jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/Projects/AddSubProject.json", Encoding.UTF8);
-            jsonBody = jsonBody.Replace("projetotesteaddSUB3", name);
+            jsonBody = jsonBody.Replace("$subproject", name);
 
 
         }
