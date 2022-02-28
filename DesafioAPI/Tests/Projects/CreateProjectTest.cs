@@ -1,4 +1,6 @@
-﻿using DesafioAPI.Requests.Projects;
+﻿using DesafioAPI.Helpers;
+using DesafioAPI.Helpers.Project;
+using DesafioAPI.Requests.Projects;
 using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
@@ -11,25 +13,36 @@ namespace DesafioAPI.Tests.Projects
     [TestFixture]
     public class CreateProjectTest : TestBase
     {
+        //Criar um projeto e validar o status code
         [Test]
-        public void CriarProjetoSucesso()
+        public void CriarProjetoRequest()
         {
-            //arrange
-            string nameStatus = "development";
-            string labelStatus = "development";
-            string description = "Teste criar novo projeto";
-            string filePath = "/tmp/";
-            string nameViewState = "public";
-            string labelViewState = "public";
-
-            //actions
             CreateProjectRequest createProjectRequest = new CreateProjectRequest();
-            createProjectRequest.SetJsonBody( nameStatus, labelStatus, description, filePath, 
-                nameViewState, labelViewState);
+            createProjectRequest.SetDefaultJsonBody();
 
             IRestResponse<dynamic> response = createProjectRequest.ExecuteRequest();
+            response.PrintResponse();
             Assert.AreEqual(System.Net.HttpStatusCode.Created, response.StatusCode);
-            //Assert.AreEqual("1", response.Data["id"].ToString());
+
+        }
+
+        //Criar um projeto e validar os dados 
+        [Test]
+        public void ValidarDadosProjetoSucesso()
+        {
+            ProjectHelpers projectHelpers = new ProjectHelpers();
+            Project project = projectHelpers.CriarProjetoDefault();
+
+            Console.WriteLine(project.Id);
+            Console.WriteLine(project.Name);
+            Console.WriteLine(project.Description);
+            Console.WriteLine(project.Enabled);
+
+
+            Assert.IsTrue(project.Id > 0);
+            Assert.IsTrue(project.Name.Contains("Project_"));
+            Assert.AreEqual("Teste criar novo projeto", project.Description);
+            Assert.IsTrue(project.Enabled);
 
 
         }
