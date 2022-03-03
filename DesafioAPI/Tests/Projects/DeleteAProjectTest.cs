@@ -17,9 +17,9 @@ namespace DesafioAPI.Tests.Projects
             string project_id = "6";
             DeleteAProjectRequest deleteAProjectRequest = new DeleteAProjectRequest(project_id);
             IRestResponse<dynamic> response = deleteAProjectRequest.ExecuteRequest();
-            {
+            
                 Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
-            }
+            
         }
     }
 }
