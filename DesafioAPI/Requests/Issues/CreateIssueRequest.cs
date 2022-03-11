@@ -15,11 +15,12 @@ namespace RestSharpNetCoreTemplate.Requests
             requestService = "/api/rest/issues/";
         }
 
-        public void SetJsonBody(string summary, string testeissue, string name)
+        public void SetJsonBody(string summary, string description, string name)
         {
-            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/CreateIssue.json", Encoding.UTF8);
+            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/Issues/CreateIssue.json", Encoding.UTF8);
             jsonBody = jsonBody.Replace("$summary", summary);
-            jsonBody = jsonBody.Replace("$testeissue", testeissue);
+            jsonBody = jsonBody.Replace("$description", description);
+            jsonBody = jsonBody.Replace("$name", name);
 
 
         }

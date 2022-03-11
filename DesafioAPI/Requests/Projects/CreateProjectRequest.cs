@@ -15,10 +15,11 @@ namespace DesafioAPI.Requests.Projects
             requestService = "/api/rest/projects/";
         }
 
-        public void SetJsonBody(string nameStatus, string labelStatus, string description, string filePath, 
+        public void SetJsonBody(string nameProject,string nameStatus, string labelStatus, string description, string filePath, 
             string nameViewState, string labelViewState)
         {
-            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/CreateProject.json", Encoding.UTF8);
+            jsonBody = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Jsons/Projects/CreateProject.json", Encoding.UTF8);
+            jsonBody = jsonBody.Replace("$nameProject", nameProject);
             jsonBody = jsonBody.Replace("$nameStatus", nameStatus);
             jsonBody = jsonBody.Replace("$labelStatus", labelStatus);
             jsonBody = jsonBody.Replace("$description", description);

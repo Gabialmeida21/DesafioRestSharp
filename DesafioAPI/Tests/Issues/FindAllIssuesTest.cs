@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using DesafioAPI.Helpers;
+using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
 using RestSharpNetCoreTemplate.Requests;
@@ -20,6 +21,8 @@ namespace RestSharpNetCoreTemplate.Tests.Issues
             //actions
             FindAllIssuesRequest findAllIssuesRequest = new FindAllIssuesRequest();
             IRestResponse<dynamic> response = findAllIssuesRequest.ExecuteRequest();
+
+            response.PrintResponse();
 
             Assert.AreEqual(System.Net.HttpStatusCode.OK, response.StatusCode);
             //Assert.AreEqual("1", response.Data["id"].ToString());

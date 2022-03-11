@@ -22,6 +22,22 @@ namespace RestSharpNetCoreTemplate.DBSteps
             return DBHelpers.RetornaDadosQuery(query);
         }
 
+        //public static List<string> InserirUmaIssue()
+        //{
+        //    string query = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/monitorAnIssue.sql", Encoding.UTF8);
+        //    return DBHelpers.RetornaDadosQuery(query);
+        //}
+
+        public static List<string> InserirUmaIssue()
+        {
+            string comandoInsert = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/inserirUmaIssue.sql", Encoding.UTF8);
+            DBHelpers.ExecuteQuery(comandoInsert);
+
+            string query = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/buscarUmaIssue.sql", Encoding.UTF8);
+            return DBHelpers.RetornaDadosQuery(query);
+        }
+
+
         public static void AtualizaDataDoItemSolicitacaoParaAgoraDB(string solicitacaoItemId)
         {
             string query = File.ReadAllText(GeneralHelpers.ReturnProjectPath() + "Queries/atualizaDataDoItemSolicitacaoParaAgora.sql", Encoding.UTF8);

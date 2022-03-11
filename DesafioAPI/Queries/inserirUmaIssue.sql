@@ -1,0 +1,3 @@
+﻿INSERT INTO bugtracker.mantis_bug_table
+( project_id, reporter_id, handler_id, duplicate_id, priority, severity, reproducibility, status, resolution, projection, eta, bug_text_id, os, os_build, platform, version, fixed_in_version, build, profile_id, view_state, summary, sponsorship_total, sticky, target_version, category_id, date_submitted, due_date, last_updated)
+VALUES( 2, 1, 0, 0, 30, 50, 70, 10, 10, 10, 10, 6, '', '', '', '', '', '', 0, 10, 'Teste Issue', 0, 0, '', 1, 1646871402, 1, 1646871402);

@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using RestSharp;
 using RestSharpNetCoreTemplate.Bases;
+using RestSharpNetCoreTemplate.DBSteps;
 using RestSharpNetCoreTemplate.Requests;
 using System;
 using System.Collections.Generic;
@@ -16,14 +17,19 @@ namespace RestSharpNetCoreTemplate.Tests
         [Test]
         public void CriarIssueSucesso()
         {
+            List<string> idissue = SolicitacaoDBSteps.InserirUmaIssue();
+
+            
+            string issue_id = idissue[0];
+
             //arrange
             string summary = "Teste Issue";
-            string testeissue = "Teste Issue API";
+            string description = "Teste Issue API";
             string name = "Teste";
 
             //actions
             CreateIssueRequest createIssueRequest = new CreateIssueRequest();
-            createIssueRequest.SetJsonBody(summary, testeissue, name);
+            createIssueRequest.SetJsonBody(summary, description, name);
 
             IRestResponse<dynamic> response = createIssueRequest.ExecuteRequest();
             Assert.AreEqual(System.Net.HttpStatusCode.Created, response.StatusCode);

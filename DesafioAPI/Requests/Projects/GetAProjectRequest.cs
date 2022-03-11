@@ -13,7 +13,7 @@ namespace DesafioAPI.Requests.Projects
             method = RestSharp.Method.GET;
             requestService = "/api/rest/projects/{project_id}";
 
-            parameters.Add("project_id", project_id.ToString());
+            parameters.Add("project_id", project_id);
         }
 
 
