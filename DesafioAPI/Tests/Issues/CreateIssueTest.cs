@@ -13,7 +13,6 @@ namespace RestSharpNetCoreTemplate.Tests
     public class CreateIssueTests : TestBase
 
     {
-
         [Test]
         public void CriarIssueSucesso()
         {

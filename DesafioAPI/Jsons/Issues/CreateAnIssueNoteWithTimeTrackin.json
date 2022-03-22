@@ -1,0 +1,9 @@
+﻿{
+  "text": "$text",
+  "view_state": {
+    "name": "$name"
+  },
+  "time_tracking": {
+    "duration": "$duration"
+  }
+}

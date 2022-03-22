@@ -1,0 +1,31 @@
+﻿{
+  "summary": "$summary",
+  "description": "$description",
+  "project": {
+    "id": 46,
+    "name": "$nameProject"
+  },
+  "category": {
+    "id": 5,
+    "name": "bugtracker"
+  },
+  "custom_fields": [
+    {
+      "field": {
+        "id": 4,
+        "name": "The City"
+      },
+      "value": "Seattle"
+    }
+  ],
+  "files": [
+    {
+      "name": "test.txt",
+      "content": "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+    },
+    {
+      "name": "test2.txt",
+      "content": "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+    }
+  ]
+}

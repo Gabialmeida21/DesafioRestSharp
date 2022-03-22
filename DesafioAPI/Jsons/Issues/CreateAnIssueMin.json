@@ -1,0 +1,10 @@
+﻿{
+  "summary": "$summary",
+  "description": "$description",
+  "category": {
+    "name": "General"
+  },
+  "project": {
+    "name": "testeCarnaval4"
+  }
+}

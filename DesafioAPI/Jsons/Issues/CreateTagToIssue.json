@@ -1,0 +1,14 @@
+﻿{
+  "tags": [
+    {
+      "id": 1
+    },
+    {
+      "name": "$nameTag"
+    },
+    {
+      "id": 3,
+      "name": "$nametag2"
+    }
+  ]
+}
